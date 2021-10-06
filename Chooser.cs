@@ -6,80 +6,36 @@ namespace cse210_tc04
     
     class Chooser
     {
-        const int NUM_DICE = 5;
-        const int numOfDice = 5;
-        List<int> _dice = new List<int>();
-        int _numOfThrows = 0;
-
-
+        int _card1 = 0;
+        int _card2 = 0;
+        int _numOfTurns = 0;
         public bool IsFirstGuess()
         {
-            return _numOfThrows == 0;
+            return _numOfTurns == 0;
         }
-
-      
-        public bool ContainsScoringDie()
+        public int GetNewCard() 
         {
-            return _dice.Contains(1) || _dice.Contains(5);
-        }
-     
-        public bool CanThrow()
-        {
-            return IsFirstGuess() || ContainsScoringDie();
-        }
-
-       
-        public void MakeChoice()
-        {
-            _numOfThrows++;
-            _dice.Clear();
-
             Random randomGenerator = new Random();
+            int card = randomGenerator.Next(1,14);
 
-            for(int i = 0; i < numOfDice; i++)
-            {
-                int die = randomGenerator.Next(1,7);
-                _dice.Add(die);
-            }
+            return card;
+
         }
 
-     
-        public int GetPointsForDie(int die)
+        public string CompareCards(int card1, int card2)
         {
-            int points = 0;
-
-            if (die == 1)
+            if (card2 >= card1)
             {
-                points = 100;
+                return "h";
             }
-            else if (die == 5)
+            else 
             {
-                points = 50;
+                return "l";
             }
-
-            return points;
         }
-
-       
-        public int GetPoints()
+        public bool ChoiceVerdict(string choice, string verdict)
         {
-            int points = 0;
-
-            foreach (int die in _dice)
-            {
-                points += GetPointsForDie(die);
-            }
-
-            return points;
-        }
-
-   
-        public string GetDiceString()
-        {
-            string commaList = string.Join(", ", _dice);
-            string result = "[" + commaList + "]";
-
-            return result;
+            return false;
         }
     }
 }
