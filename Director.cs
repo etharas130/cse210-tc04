@@ -2,13 +2,7 @@ using System;
 
 namespace cse210_tc04
 {
-    /// <summary>
-    /// Like a director in a play, this class is responsible for the game, the script,
-    /// the actors, and all of their interactions.
-    /// 
-    /// For this program, it has responsibility for the score, coordinating with the
-    /// player to roll, and the sequence of play.
-    /// </summary>
+   
     class Director
     {
         bool _keepPlaying = true;
@@ -68,5 +62,5 @@ namespace cse210_tc04
             }
         }
 
-    } // end of class: Director
+    } 
 }
