@@ -29,7 +29,7 @@ namespace cse210_tc04
         {
             if (!_chooser.IsFirstGuess())
             {
-                Console.WriteLine("Roll again? [y/n] ");
+                Console.WriteLine("Keep Playing? [y/n] ");
                 string choice = Console.ReadLine();
                 _keepPlaying = (choice == "y");
             }
@@ -52,12 +52,13 @@ namespace cse210_tc04
             
             string verdict = _chooser.CompareCards(_card1, _card2);
 
-            bool x = _chooser.ChoiceVerdict(choice, verdict);
-
+            bool result = _chooser.ChoiceVerdict(choice, verdict);
+            
+            _score = _chooser.GetPoints(result, _score); 
             
             Console.WriteLine($"Your score is: {_score}");
 
-            if (!_chooser.CanThrow())
+            if (_score <= 0)
             {
                 Console.WriteLine("Game Over");
                 _keepPlaying = false;
