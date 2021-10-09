@@ -25,7 +25,7 @@ namespace cse210_tc04
             }
         }
 
-        void GetInputs()
+        void GetInputs() // Is this important??? -Linda
         {
             if (!_chooser.IsFirstGuess())
             {
@@ -46,14 +46,19 @@ namespace cse210_tc04
         {
 
             Console.WriteLine();
-            Console.WriteLine($"The card is: {_card1}");
-            Console.WriteLine("Is next card Higher or Lower [h/]l]? ");
+            Console.WriteLine("Welcome to HiLo! You begin with 300 points.");
+            Console.WriteLine();
+            Console.WriteLine($"The first card is: {_card1}");
+            //Console.WriteLine($"TESTING_CHEAT_SECOND_CARD: {_card2}");
+
+            Console.Write("Is next card Higher or Lower [h/l]? ");
             string choice = Console.ReadLine();
+
+            Console.WriteLine($"Your choice: {choice}");
+            Console.WriteLine($"The second card was: {_card2}");
             
             string verdict = _chooser.CompareCards(_card1, _card2);
-
             bool result = _chooser.ChoiceVerdict(choice, verdict);
-            
             _score = _chooser.GetPoints(result, _score); 
             
             Console.WriteLine($"Your score is: {_score}");

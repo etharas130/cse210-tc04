@@ -6,11 +6,10 @@ namespace cse210_tc04
     
     class Chooser
     {
-        int _card1 = 0;
+        int _card1 = 0; // Do we need the _card1 and _card2 member variables??? -Linda
         int _card2 = 0;
         int _numOfTurns = 0;
 
-        // 
         public bool IsFirstGuess()
         {
             return _numOfTurns == 0;
@@ -42,13 +41,28 @@ namespace cse210_tc04
         // the user was right or wrong
         public bool ChoiceVerdict(string choice, string verdict)
         {
-            return false;
+            if (choice == verdict)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
 
         // determines the point total
         public int GetPoints(bool result, int _score)
         {
-            return _score;
+            if (result == true)
+            {
+                return _score + 100;
+            }            
+            else
+            {
+                return _score - 75;
+            }
         }
     }
 }
