@@ -2,7 +2,10 @@ using System;
 
 namespace cse210_tc04
 {
-   
+   /// <summary>
+   /// Represents the director of the game. Tracks the start of the game, whether the chooser is still playing,
+   /// and plays the game.
+   /// <summary>
     class Director
     {
         bool _keepPlaying = true;
@@ -30,6 +33,7 @@ namespace cse210_tc04
             }
         }
 
+        // asks the chooser whether they want to keep playing after the score is counted
         void GetInputs()
         {
             if (_chooser.IsFirstGuess())
@@ -49,6 +53,7 @@ namespace cse210_tc04
             }
         }
 
+        // chooses the next cards for comparing
         void DoUpdates()
         {
             _card1 = _chooser.GetNewCard();
@@ -56,6 +61,7 @@ namespace cse210_tc04
             
         }
 
+        // plays the game
         void DoOutputs()
         {
 

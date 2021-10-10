@@ -4,6 +4,11 @@ using System.Collections.Generic;
 namespace cse210_tc04
 {
     
+    /// <summary>
+    /// Represents the card chooser in the game. Tracks the card generation, card comparison, the points,
+    /// and the number of turns taken.
+    /// </summary>
+    
     class Chooser
     {
         //int _card1 = 0;
@@ -66,3 +71,4 @@ namespace cse210_tc04
         }
     }
 }
+// end of class: Chooser
