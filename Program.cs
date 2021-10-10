@@ -7,6 +7,7 @@ namespace cse210_tc04
         static void Main(string[] args)
         {
             Director theDirector = new Director();
+            theDirector.DoIntro();
             theDirector.StartGame();
         }
         

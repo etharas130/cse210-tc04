@@ -11,6 +11,11 @@ namespace cse210_tc04
         int _card1 = 0;
         int _card2 = 0;
 
+        public void DoIntro()
+        {
+            Console.WriteLine("Welcome to HiLo! You start with 300 points!");
+        }
+
         public void StartGame()
         {
             while (_keepPlaying)
@@ -25,7 +30,7 @@ namespace cse210_tc04
             }
         }
 
-        void GetInputs() // Is this important??? -Linda
+        void GetInputs()
         {
             if (!_chooser.IsFirstGuess())
             {
@@ -45,8 +50,6 @@ namespace cse210_tc04
         void DoOutputs()
         {
 
-            Console.WriteLine();
-            Console.WriteLine("Welcome to HiLo! You begin with 300 points.");
             Console.WriteLine();
             Console.WriteLine($"The first card is: {_card1}");
             //Console.WriteLine($"TESTING_CHEAT_SECOND_CARD: {_card2}");
