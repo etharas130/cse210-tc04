@@ -6,8 +6,8 @@ namespace cse210_tc04
     
     class Chooser
     {
-        int _card1 = 0; // Do we need the _card1 and _card2 member variables??? -Linda
-        int _card2 = 0;
+        //int _card1 = 0;
+        //int _card2 = 0;
         int _numOfTurns = 0;
 
         public bool IsFirstGuess()

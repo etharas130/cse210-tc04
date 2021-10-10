@@ -32,11 +32,20 @@ namespace cse210_tc04
 
         void GetInputs()
         {
-            if (!_chooser.IsFirstGuess())
+            if (_chooser.IsFirstGuess())
             {
-                Console.WriteLine("Keep Playing? [y/n] ");
+                Console.Write("Keep Playing? [y/n] ");
                 string choice = Console.ReadLine();
-                _keepPlaying = (choice == "y");
+                //_keepPlaying = (choice == "y");
+                if (choice == "y")
+                {
+                    _keepPlaying = true;
+                }
+                else
+                {
+                    _keepPlaying = false;
+                    Console.WriteLine("Goodbye!");
+                }
             }
         }
 
@@ -57,7 +66,7 @@ namespace cse210_tc04
             Console.Write("Is the next card Higher or Lower [h/l]? ");
             string choice = Console.ReadLine();
 
-            Console.WriteLine($"Your choice: {choice}");
+            //Console.WriteLine($"Your choice: {choice}");
             Console.WriteLine($"The second card was: {_card2}");
             
             string verdict = _chooser.CompareCards(_card1, _card2);
