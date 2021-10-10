@@ -54,7 +54,7 @@ namespace cse210_tc04
             Console.WriteLine($"The first card is: {_card1}");
             //Console.WriteLine($"TESTING_CHEAT_SECOND_CARD: {_card2}");
 
-            Console.Write("Is next card Higher or Lower [h/l]? ");
+            Console.Write("Is the next card Higher or Lower [h/l]? ");
             string choice = Console.ReadLine();
 
             Console.WriteLine($"Your choice: {choice}");
